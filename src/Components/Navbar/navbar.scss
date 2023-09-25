@@ -4,6 +4,7 @@
     --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
     --whiteColor:  hsl(0, 0%, 100%);
     --textColor: hsl(240, 4%, 36%);
+    --blackColor: hsl(0, 0%, 0%);
     --whiteColorDeam: hsl(0, 0%, 93%);
     --greyText: rgb(190, 190, 190);
     --inputColor: rgb(239, 239, 239);
@@ -18,14 +19,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.668);
+    background: rgba(255, 255, 255, 0.92);
     width: 100%;
     padding: 1rem;
     z-index: 1000;
     box-shadow: 2px 5px 7px rgba(240, 240, 240, 0.187);
     // background:none;
 
-
+.navbar{
+    .navLists{
+        display: none;
+    }
+}
 
     .logo{
         color: var(--bodyColor);       
@@ -33,6 +38,9 @@
         cursor: pointer;
         align-items: center;
         justify-content: center;
+        h1{
+            color: var(--textColor);
+        }
 
         .icon{
             font-size: 25px;
@@ -43,7 +51,7 @@
     }
 
     @media screen and (max-width: 768px){
-        .navBar{
+        .navbar{
             position: absolute;
             background: var(--whiteColorDeam);
             height: max-content;
@@ -64,9 +72,13 @@
              width: 100%;
              margin: auto;
              padding: .5rem 0;
+             display: flex;
+            gap: 2rem;
+          
 
              .navItem{
                 padding: .5rem 0;
+                margin-left: .5rem;
 
                 .navLink{
                     color: var(--textColor);
@@ -116,21 +128,21 @@
 //media queries/...................
 
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 840px) {
     .toggleNavbar,.closeNavbar{
         display: none;
     }
     .header{
         padding: 1.5rem 2rem;
 
-        .navBar{
+        .navbar{
             .navLists{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: row;
-
-                .navItem{
+            
+                .navItem{ 
                     .navLink{
                         color: var(--textColor);
                         padding: 0 0.45rem;
@@ -159,7 +171,7 @@
 
 @media screen and (min-width:960px) {
     .header{
-        .navBar{
+        .navbar{
             .navLists{
                 .navItem{
                     padding: 0 0.7rem;
